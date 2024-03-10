@@ -1,0 +1,256 @@
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+:root {
+  --clr-1: #052b2f;
+  --clr-2: #2e656a;
+  --clr-3: #0e4b50;
+  --clr-4: #2d8f85;
+  --clr-5: #637c54;
+}
+body {
+  background: var(--clr-1);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="decimal"]{
+  height: 2vh;
+  width: 16vh;
+  position: relative;
+  background: var(--clr-4);
+  border-radius: 0.5rem;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.input-form {
+  height: 80vh;
+  aspect-ratio: 1 / 1.5;
+  background: var(--clr-1);
+  border-radius: 0.5rem;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 60px;
+}
+
+.input-field::after,
+.input-form::after {
+  filter: blur(3.5rem);
+}
+::placeholder{
+  color:white;
+}
+.button{
+  background-color:#beb4b4;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  height: auto;
+  width: 100px;
+  display: block;
+}
+
+.input-form::before,
+.input-form::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5),
+    var(--clr-4),
+    var(--clr-3)
+  );
+  border-radius: inherit;
+  animation: rotation 20s linear infinite;
+}
+
+.input-field::before,
+.input-field::after{
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5),
+    var(--clr-4),
+    var(--clr-3)
+  );
+  border-radius: inherit;
+  animation: rotation 20s linear infinite;
+
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+.container{
+  height: 98vh;
+  width: 98vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px auto;
+}
+.top-cont{
+  height: 10vh;
+  width: 30vw;
+  border: 1px double var(--clr-2);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px;
+}
+.bottom-cont{
+  height: auto;
+  width: 60vw; 
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  padding: 10px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: 400px;
+}
+.circle{
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.dropdown, .circle{
+  margin: 10px;
+}
+.list{
+  height: auto;   
+  width: 50vh;
+  background-color:#2d8f85;
+  border: 1px solid var(--clr-5);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 20px;
+  
+}
+.list p {
+  margin: 5px 0;
+}
+.title{
+  height: auto;
+  width: 100%;
+}
+.desc{
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.price{
+ height: auto;
+ width: 40px;
+ margin-bottom: 10px;
+}
+.status{
+  height: auto;
+  width: 40px;
+  margin-bottom: 10px;
+ }
+ .place{
+  height: auto;
+  width: 40px;
+  margin-bottom: 10px;
+ }
+ .time{
+  height: auto;
+  width: 100px;
+  display: flex;
+  margin-bottom: 10px;
+ }
+ .image{
+  height: 10vh;
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  /* .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: auto; 
+  } */
+  .close {
+    color: #beb4b4;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: yellow;
+    text-decoration: none;  
+    cursor: pointer;
+  }
+  .popup{
+    display: flex;
+  }
+  
+  img{
+    border-radius: 8px;
+    height: 100px;
+    width: 300px;
+    object-fit: fill;
+  }
+  img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  }
